@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <form class="main" id="smain">
+        <input type="text" id="Name" placeholder="Name" name="name" required>
+         <input type="email" placeholder="Write your email" name="email" required>
+         <button type="submit" id="Send">Send</button>
+    </form>
+    <script>
+        jQuery('#smain').on('submit', function(e){
+            e.preventDefault();
+            jQuery.ajax({
+                url:'https://script.google.com/macros/s/AKfycbwgWEVhDkkJ3tm31O68z8pNxYR6afFW06-Db97tPyY9_MKZmpeflYE0bbdQWPlVByQvBA/exec',
+                type:'post',
+                data:jQuery('#smain').serialize(),
+                success:function(result){
+                    console.log(result);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
